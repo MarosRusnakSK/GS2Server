@@ -20,6 +20,7 @@ namespace GS2.Server
     public partial class App : IDisposable
     {
         // give the mutex a  unique name
+        // DONE: MRXXX: Updated name to be uniwue to this application.
         private const string MutexName = "Green Swamp Server 2";
         // declare the mutex
         private readonly Mutex _mutex;
