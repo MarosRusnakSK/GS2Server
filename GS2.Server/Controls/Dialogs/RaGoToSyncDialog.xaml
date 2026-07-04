@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="GS2.Server.Controls.Dialogs.RaGoToSyncDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:skyTelescope="clr-namespace:GS2.Server.SkyTelescope"
+        mc:Ignorable="d" d:DataContext="{d:DesignInstance skyTelescope:SkyTelescopeVm}">
+    <GroupBox Header="{StaticResource goSync}" Margin="5">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <TextBlock Margin="0,0,0,10" Text="{StaticResource goSyncWarning}"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <TextBlock Text="RA: "/>  
+                    <TextBlock Text="{Binding GoToRaString}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <TextBlock Text="Dec: "/>  
+                    <TextBlock Text="{Binding GoToDecString}"/>
+                </StackPanel>
+            </StackPanel>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{StaticResource goAcpCoords}"/>
+            <StackPanel Orientation="Horizontal" Margin="0 5 0 0" HorizontalAlignment="Center" >
+                <Button IsDefault="False" Style="{StaticResource MaterialDesignFlatButton}" Command="{Binding AcceptRaGoToSyncDialogCmd}" Content="{StaticResource diaAccept}"/>
+                <Button IsCancel="True" IsDefault="True" Margin="8 0 0 0" Style="{StaticResource MaterialDesignFlatButton}" Command="{Binding CancelRaGoToSyncDialogCmd}" Content="{StaticResource diaCancel}"/>
+            </StackPanel>
+    </StackPanel>
+    </GroupBox>
+    </UserControl>

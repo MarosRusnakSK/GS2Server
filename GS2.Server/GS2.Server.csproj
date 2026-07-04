@@ -1,0 +1,355 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <!-- GUID_GS2-->
+    <Product>GS2.Server</Product>
+    <Title>GS2.Server</Title>
+    <Description>GS2.Server</Description>
+    <ProjectGuid>{6806353A-9C8C-49AA-BEAA-27094AC5BDDA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net481</TargetFramework>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <OutputPath>..\Builds\$(Configuration)\</OutputPath>
+    <UseWPF>true</UseWPF>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <StartupObject>GS2.Server.GSServer</StartupObject>
+    <RootNamespace>GS2.Server</RootNamespace>
+    <AssemblyName>GS2.Server</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Resources\ASCOM.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>greenswamp1.ico</ApplicationIcon>
+    <Copyright>Copyright © Green Swamp Software 2019-2026</Copyright>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+ <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+    <WarningLevel>5</WarningLevel>
+  </PropertyGroup>
+ <ItemGroup>
+   <None Remove="Resources\IC1396.png" />
+ </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Notes\NotesTemplates\NotesLog.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ASCOM.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ColorPicker\ColorPicker.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GS.FitsImageManager\GS.FitsImageManager.csproj" />
+    <ProjectReference Include="..\GS.Principle\GS.Principles.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GS.Shared\GS.Shared.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GS.Simulator\GS.Simulator.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GS.SkyWatcher\GS.SkyWatcher.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GS.Utilities\GS.Utilities.csproj" />
+    <ProjectReference Include="..\NINA\NINA.csproj" />
+    <ProjectReference Include="..\XInputDotNetPure\XInputDotNetPure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IC1396.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\M33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\greenswamp1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NGC6992.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Orion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\compassN.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Models\compassS.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Horsehead.png" />
+  </ItemGroup>
+  <ItemGroup>
+	  <PackageReference Include="ASCOM7.BuildEnvironment.Support" Version="7.0.0">
+		  <ExcludeAssets>runtime</ExcludeAssets>
+	  </PackageReference>
+    <PackageReference Include="DarkSkyApi" Version="3.3.0" />
+    <PackageReference Include="HelixToolkit.Wpf" Version="2.27.3" />
+    <PackageReference Include="LiveCharts" Version="0.9.7" />
+    <PackageReference Include="LiveCharts.Geared" Version="1.2.9" />
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-beta.701" />
+    <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.8.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.142" />
+    <PackageReference Include="MouseKeyHook" Version="5.7.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="SharpDX" Version="4.2.0" />
+    <PackageReference Include="SharpDX.DirectInput" Version="4.2.0" />
+    <PackageReference Include="SkiaSharp" Version="3.119.2" />
+    <PackageReference Include="StrongNamer" Version="0.2.5" />
+    <PackageReference Include="System.Drawing.Common" Version="10.0.7" />
+    <PackageReference Include="System.Management" Version="10.0.7" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+    <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.2" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Profiles\AltAz.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AltAz.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Profiles\GermanPolar.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GermanPolar.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Profiles\Polar.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Polar.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Alignment.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Alignment.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Focuser.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Focuser.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Gamepad.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Gamepad.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Profile.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Profile.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Server.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Server.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\SkyTelescope.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SkyTelescope.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Models\Default.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\DefaultAltAz.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\DualTelescopePolarLeft.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\DualTelescopePolarRight.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\DualTelescopeAltAz.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\Reflector.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\ReflectorAltAz.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\Refractor.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\RefractorAltAz.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\RitcheyChretien.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\RitcheyChretienAltAz.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\RitcheyChretienTruss.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\RitcheyChretienTrussAltAz.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\SchmidtCassegrain.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Models\SchmidtCassegrainAltAz.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\Profiles\AltAz.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>AltAz.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\Profiles\GermanPolar.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>GermanPolar.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\Profiles\Polar.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Polar.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\Alignment.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Alignment.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\Focuser.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Focuser.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\Gamepad.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Gamepad.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\Profile.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Profile.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\Server.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Server.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\SkyTelescope.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>SkyTelescope.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\AltAzGauges.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Controls\Dialogs\DecGoToDecimal.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Dialogs\AcceptCancelDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Controls\Dialogs\Snap1DitherDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Dialogs\Snap2DitherDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Controls\Dialogs\ParkDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Dialogs\HomeDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Controls\Dialogs\RaGoToDecimal.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Controls\Dialogs\LatLongDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Dialogs\CapabilitiesDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Controls\Dialogs\MountInfoDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Dialogs\CustomGearingDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Controls\Dialogs\SpiralFovDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Snap\SnapV.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Windows\MessageControlV.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Windows\ButtonsControlV.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,96 @@
+﻿<Window x:Class="GS2.Server.Main.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:alignment="clr-namespace:GS2.Server.Alignment"
+        xmlns:controls="clr-namespace:GS2.Server.Controls"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:focuser="clr-namespace:GS2.Server.Focuser"
+        xmlns:gamepad="clr-namespace:GS2.Server.GamePad"
+        xmlns:main="clr-namespace:GS2.Server.Main"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:model3D="clr-namespace:GS2.Server.Model3D"
+        xmlns:notes="clr-namespace:GS2.Server.Notes"
+        xmlns:pec="clr-namespace:GS2.Server.Pec"
+        xmlns:plot="clr-namespace:GS2.Server.Plot"
+        xmlns:pole="clr-namespace:GS2.Server.PoleLocator"
+        xmlns:pulses="clr-namespace:GS2.Server.Pulses"
+        xmlns:settings="clr-namespace:GS2.Server.Settings"
+        xmlns:skyTelescope="clr-namespace:GS2.Server.SkyTelescope"
+        xmlns:snap="clr-namespace:GS2.Server.Snap"
+        Title="GS2 Server"
+        Width="{Binding WindowWidth, Mode=TwoWay}"
+        Height="{Binding WindowHeight, Mode=TwoWay}"
+        MinWidth="200"
+        MinHeight="100"
+        AllowsTransparency="True"
+        Closed="MainWindow_OnClosed"
+        ContentRendered="MainWindow_OnContentRendered"
+        d:DataContext="{d:DesignInstance main:MainWindowVm,
+                                         IsDesignTimeCreatable=True}"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        FontStretch="Normal"
+        Left="{Binding WindowLeft, Mode=TwoWay}"
+        ResizeMode="CanResizeWithGrip"
+        TextElement.FontSize="14"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextOptions.TextFormattingMode="Display"
+        Top="{Binding WindowTop, Mode=TwoWay}"
+        Topmost="{Binding TopMost}"
+        WindowState="{Binding WindowStates}"
+        WindowStyle="None"
+        mc:Ignorable="d">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type skyTelescope:SkyTelescopeVm}">
+            <skyTelescope:SkyTelescopeV />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type focuser:FocuserVm}">
+            <focuser:FocuserView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type notes:NotesVm}">
+            <notes:NotesV />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type settings:SettingsVm}">
+            <settings:SettingsV />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type gamepad:GamePadVM}">
+            <gamepad:GamePadV />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type model3D:Model3Dvm}">
+            <model3D:Model3DV />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type plot:PlotVm}">
+            <plot:PlotV />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type pole:PoleLocatorVM}">
+            <pole:PoleLocatorV />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type pulses:PulsesVM}">
+            <pulses:PulsesV />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type pec:PecVM}">
+            <pec:PecV />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type snap:SnapVM}">
+            <snap:SnapV />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type alignment:AlignmentVM}">
+            <alignment:AlignmentV />
+        </DataTemplate>
+    </Window.Resources>
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo x:Name="TaskBarItemInfo" Description="{StaticResource titleDescription}" />
+    </Window.TaskbarItemInfo>
+    <Grid Background="{DynamicResource MaterialDesignBody}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <controls:WindowTitleBar Grid.Row="0" />
+        <controls:TabBar Grid.Row="1" />
+        <Grid Grid.Row="2" Background="{DynamicResource MaterialDesignPaper}">
+            <ContentControl Content="{Binding CurrentPageViewModel}" />
+        </Grid>
+    </Grid>
+</Window>
+
