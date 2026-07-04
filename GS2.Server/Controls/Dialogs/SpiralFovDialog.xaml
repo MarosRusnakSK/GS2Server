@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="GS2.Server.Controls.Dialogs.SpiralFovDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:domain="clr-namespace:GS2.Server.Domain"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:domain1="clr-namespace:GS.Shared.Domain;assembly=GS.Shared"
+        xmlns:windows="clr-namespace:GS2.Server.Windows"
+        d:DataContext="{d:DesignInstance windows:SpiralVM, IsDesignTimeCreatable=True}" mc:Ignorable="d" >
+    <UserControl.Resources>
+        <domain:InverseBooleanConverter x:Key="InvBol" />
+    </UserControl.Resources>
+    <GroupBox Header="{StaticResource 1021FovHeader}" Margin="5">
+        <StackPanel Orientation="Vertical" >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{StaticResource 1021CameraWidth}" VerticalAlignment="Center"/>
+                    <TextBox materialDesign:HintAssist.Hint="{StaticResource 1021MM}" ToolTip="{StaticResource 1021MM}" Margin="13,0,0,0" MinWidth="80">
+                        <TextBox.Text>
+                            <Binding Path="CameraWidth" Mode="TwoWay" UpdateSourceTrigger="LostFocus">
+                                <Binding.ValidationRules>
+                                    <domain1:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                    <domain:DoubleValidationRule ValidatesOnTargetUpdated="True" />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBlock Text="{StaticResource 1021CameraHeight}" VerticalAlignment="Center" />
+                    <TextBox materialDesign:HintAssist.Hint="{StaticResource 1021MM}" ToolTip="{StaticResource 1021MM}" Margin="10,0,0,0" MinWidth="80">
+                        <TextBox.Text>
+                            <Binding Path="CameraHeight" Mode="TwoWay" UpdateSourceTrigger="LostFocus">
+                                <Binding.ValidationRules>
+                                    <domain1:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                    <domain:DoubleValidationRule ValidatesOnTargetUpdated="True" />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </StackPanel>
+
+                <Label Content="--OR--" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <TextBlock Text="{StaticResource 1021EyepieceFS}" VerticalAlignment="Center" />
+                    <TextBox materialDesign:HintAssist.Hint="{StaticResource 1021MM}" ToolTip="{StaticResource 1021MM}" Margin="5,0,0,0" MinWidth="50">
+                        <TextBox.Text>
+                            <Binding Path="EyepieceFs" Mode="TwoWay" UpdateSourceTrigger="LostFocus">
+                                <Binding.ValidationRules>
+                                    <domain1:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                    <domain:DoubleValidationRule ValidatesOnTargetUpdated="True" />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </StackPanel>
+
+                <Separator Margin="0,10,0,0"></Separator>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <TextBlock Text="{StaticResource 1021OtaFL}" VerticalAlignment="Center" />
+                    <TextBox materialDesign:HintAssist.Hint="{StaticResource 1021MM}" ToolTip="{StaticResource 1021MM}"  Margin="10,0,0,0" MinWidth="50">
+                    <TextBox.Text>
+                            <Binding Path="FocalLength" Mode="TwoWay" UpdateSourceTrigger="LostFocus">
+                                <Binding.ValidationRules>
+                                    <domain1:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                    <domain:DoubleValidationRule ValidatesOnTargetUpdated="True" />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </StackPanel>
+            </StackPanel>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0" Text="Calculate Which Applies" />
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button IsCancel="True" Margin="8 0 0 0" Command="{Binding EyepieceFovDialogCmd}" Content="{StaticResource 1021Eyepiece}" />
+                <Button IsCancel="True" Margin="8 0 0 0" Command="{Binding CameraFovDialogCmd}" Content="{StaticResource 1021Camera}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <TextBlock Margin="5" Text="{StaticResource 1021Width}" />
+                <TextBlock Margin="5" Text="{Binding CalcWidth}"/>
+                <TextBlock Margin="5" Text="{StaticResource 1021Height}" />
+                <TextBlock Margin="5" Text="{Binding CalcHeight}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button IsDefault="True" Style="{StaticResource MaterialDesignFlatButton}" Command="{Binding AcceptSpiralFovDialogCmd}" Content="{StaticResource diaAccept}" IsEnabled="{Binding IsSlewing, Converter={StaticResource InvBol}}"/>
+                <Button IsCancel="True" Margin="8 0 0 0" Style="{StaticResource MaterialDesignFlatButton}" Command="{Binding CancelSpiralFovDialogCmd}" Content="{StaticResource diaCancel}"/>
+            </StackPanel>
+        </StackPanel>
+    </GroupBox>
+    </UserControl>

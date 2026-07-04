@@ -1,0 +1,99 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GS.Server.Properties" GeneratedClassName="Gamepad">
+  <Profiles />
+  <Settings>
+    <Setting Name="tracking" Type="System.String" Scope="User">
+      <Value Profile="(Default)">button 0</Value>
+    </Setting>
+    <Setting Name="stop" Type="System.String" Scope="User">
+      <Value Profile="(Default)">button 1</Value>
+    </Setting>
+    <Setting Name="park" Type="System.String" Scope="User">
+      <Value Profile="(Default)">button 2</Value>
+    </Setting>
+    <Setting Name="home" Type="System.String" Scope="User">
+      <Value Profile="(Default)">button 3</Value>
+    </Setting>
+    <Setting Name="speeddown" Type="System.String" Scope="User">
+      <Value Profile="(Default)">button 4</Value>
+    </Setting>
+    <Setting Name="speedup" Type="System.String" Scope="User">
+      <Value Profile="(Default)">button 5</Value>
+    </Setting>
+    <Setting Name="up" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pov up 0</Value>
+    </Setting>
+    <Setting Name="down" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pov down 0</Value>
+    </Setting>
+    <Setting Name="left" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pov left 0</Value>
+    </Setting>
+    <Setting Name="right" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pov right 0</Value>
+    </Setting>
+    <Setting Name="volumedown" Type="System.String" Scope="User">
+      <Value Profile="(Default)">zaxis high</Value>
+    </Setting>
+    <Setting Name="volumeup" Type="System.String" Scope="User">
+      <Value Profile="(Default)">zaxis low</Value>
+    </Setting>
+    <Setting Name="Startup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Delay" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="Version" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ratesidereal" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ratelunar" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ratesolar" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="rateking" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="abort" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="spiralin" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="spiralout" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="newspiral" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sync" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DoubleClickSpeed" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="focusin" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="focusout" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="northeast" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pov northeast 0</Value>
+    </Setting>
+    <Setting Name="northwest" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pov northwest 0</Value>
+    </Setting>
+    <Setting Name="southeast" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pov southeast 0</Value>
+    </Setting>
+    <Setting Name="southwest" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pov southwest 0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

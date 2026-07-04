@@ -1,0 +1,21 @@
+﻿using System.Runtime.InteropServices;
+
+namespace GS2.Server.Controls
+{
+    /// <summary>
+    /// Interaction logic for TopCoordsBar.xaml
+    /// </summary>
+    [ComVisible(false)]
+    public partial class StandardButtonBar
+    {
+        public StandardButtonBar()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
+    }
+}

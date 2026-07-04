@@ -1,0 +1,181 @@
+﻿<UserControl x:Class="GS2.Server.Controls.Dialogs.LimitDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:domain="clr-namespace:GS.Shared.Domain;assembly=GS.Shared"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:skyTelescope="clr-namespace:GS2.Server.SkyTelescope"
+             d:DataContext="{d:DesignInstance skyTelescope:SkyTelescopeVm}"
+             mc:Ignorable="d">
+    <GroupBox Margin="5" Header="{StaticResource botLimitOptions}">
+        <StackPanel Orientation="Vertical">
+            <Label VerticalAlignment="Center" Content="{StaticResource Meridian}" />
+            <StackPanel Orientation="Horizontal">
+                <ComboBox MinWidth="150"
+                          Margin="10,0,0,10"
+                          VerticalAlignment="Center"
+                          materialDesign:HintAssist.Hint="{StaticResource lbAxisTrackingLimit}"
+                          ItemsSource="{Binding AxisTrackingLimits}"
+                          Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                          ToolTip="{StaticResource lbAxisTrackingLimit}">
+                    <ComboBox.SelectedItem>
+                        <Binding Mode="TwoWay"
+                                 Path="AxisTrackingLimit"
+                                 UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <domain:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </ComboBox.SelectedItem>
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+                <StackPanel Margin="10,0,0,0"
+                            HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <RadioButton Width="25"
+                                 Height="25"
+                                 HorizontalAlignment="Center"
+                                 GroupName="limit"
+                                 IsChecked="{Binding LimitNothing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                                 ToolTip="{StaticResource botLimitOptions}" />
+                    <Label VerticalAlignment="Center" Content="{StaticResource LimitNothing}" />
+                </StackPanel>
+                <StackPanel Margin="10,0,0,0"
+                            HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <RadioButton Width="25"
+                                 Height="25"
+                                 HorizontalAlignment="Center"
+                                 GroupName="limit"
+                                 IsChecked="{Binding LimitTracking, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                                 ToolTip="{StaticResource botLimitOptions}" />
+                    <Label VerticalAlignment="Center" Content="{StaticResource botLimitTracking}" />
+                </StackPanel>
+                <StackPanel Margin="10,0,0,0"
+                            HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <RadioButton Width="25"
+                                 Height="25"
+                                 HorizontalAlignment="Center"
+                                 GroupName="limit"
+                                 IsChecked="{Binding LimitPark, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                                 ToolTip="{StaticResource botLimitOptions}" />
+                    <Label VerticalAlignment="Center" Content="{StaticResource btnPark}" />
+                    <ComboBox MinWidth="120"
+                              Margin="10,-10,10,0"
+                              VerticalAlignment="Center"
+                              materialDesign:HintAssist.Hint="{StaticResource btnTipParkPos}"
+                              IsEditable="False"
+                              ItemsSource="{Binding ParkPositions}"
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                              ToolTip="{StaticResource btnTipParkPos}">
+                        <ComboBox.SelectedItem>
+                            <Binding Mode="TwoWay"
+                                     Path="ParkLimitSelection"
+                                     UpdateSourceTrigger="PropertyChanged" />
+                        </ComboBox.SelectedItem>
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate DataType="skyTelescope:ParkPosition">
+                                <TextBlock Text="{Binding Name}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+            <Label VerticalAlignment="Center" Content="{StaticResource Horizon}" />
+            <StackPanel Orientation="Horizontal">
+                <ComboBox MinWidth="150"
+                          Margin="10,0,0,10"
+                          VerticalAlignment="Center"
+                          materialDesign:HintAssist.Hint="{StaticResource lbAxisTrackingLimit}"
+                          ItemsSource="{Binding AxisHzTrackingLimits}"
+                          Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                          ToolTip="{StaticResource lbAxisTrackingLimit}">
+                    <ComboBox.SelectedItem>
+                        <Binding Mode="TwoWay"
+                                 Path="AxisHzTrackingLimit"
+                                 UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <domain:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </ComboBox.SelectedItem>
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+                <StackPanel Margin="10,0,0,0"
+                            HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <RadioButton Width="25"
+                                 Height="25"
+                                 HorizontalAlignment="Center"
+                                 GroupName="Horizon limit"
+                                 IsChecked="{Binding HzLimitNothing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                                 ToolTip="{StaticResource botLimitOptions}" />
+                    <Label VerticalAlignment="Center" Content="{StaticResource LimitNothing}" />
+                </StackPanel>
+                <StackPanel Margin="10,0,0,0"
+                            HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <RadioButton Width="25"
+                                 Height="25"
+                                 HorizontalAlignment="Center"
+                                 GroupName="Horizon limit"
+                                 IsChecked="{Binding HzLimitTracking, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                                 ToolTip="{StaticResource botLimitOptions}" />
+                    <Label VerticalAlignment="Center" Content="{StaticResource botLimitTracking}" />
+                </StackPanel>
+                <StackPanel Margin="10,0,0,0"
+                            HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <RadioButton Width="25"
+                                 Height="25"
+                                 HorizontalAlignment="Center"
+                                 GroupName="Horizon limit"
+                                 IsChecked="{Binding HzLimitPark, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                                 ToolTip="{StaticResource botLimitOptions}" />
+                    <Label VerticalAlignment="Center" Content="{StaticResource btnPark}" />
+                    <ComboBox MinWidth="120"
+                              Margin="10,-10,10,0"
+                              VerticalAlignment="Center"
+                              materialDesign:HintAssist.Hint="{StaticResource btnTipParkPos}"
+                              IsEditable="False"
+                              ItemsSource="{Binding ParkPositions}"
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                              ToolTip="{StaticResource btnTipParkPos}">
+                        <ComboBox.SelectedItem>
+                            <Binding Mode="TwoWay"
+                                     Path="ParkHzLimitSelection"
+                                     UpdateSourceTrigger="PropertyChanged" />
+                        </ComboBox.SelectedItem>
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate DataType="skyTelescope:ParkPosition">
+                                <TextBlock Text="{Binding Name}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+            <Button Margin="0,10,0,0"
+                    Command="{Binding OkLimitDialogCommand}"
+                    Content="{StaticResource diaOk}"
+                    IsCancel="True"
+                    IsDefault="True"
+                    Style="{StaticResource MaterialDesignFlatButton}" />
+        </StackPanel>
+    </GroupBox>
+</UserControl>
