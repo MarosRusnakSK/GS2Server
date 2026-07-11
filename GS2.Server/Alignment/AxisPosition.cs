@@ -27,7 +27,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 using System;
-using GS.Principles;
+using GS2.Principles;
 using Newtonsoft.Json;
 
 namespace GS2.Server.Alignment

@@ -13,7 +13,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-using GS.Shared;
+using GS2.Shared;
 using System;
 using System.ComponentModel;
 using System.Reflection;
@@ -98,7 +98,7 @@ namespace GS2.Server.Helpers
                 Settings.Settings.SleepMode = false;
                 _ctsSleepMode?.Cancel();
                 var monitorItem = new MonitorEntry
-                { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}|{ex.StackTrace}" };
+                { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}|{ex.StackTrace}" };
                 MonitorLog.LogToMonitor(monitorItem);
             }
         }

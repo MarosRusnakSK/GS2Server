@@ -25,7 +25,7 @@ using System.Threading;
 using System.Linq;
 using ASCOM.DeviceInterface;
 using GS2.Server.SkyTelescope;
-using GS.Shared.Domain;
+using GS2.Shared.Domain;
 
 namespace GS2.Server.Alignment
 {

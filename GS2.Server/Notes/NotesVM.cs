@@ -13,10 +13,9 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Helpers;
 using GS2.Server.Main;
-using GS.Shared;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Reflection;
@@ -24,7 +23,8 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using GS2.Server.Controls.Dialogs;
-using GS.Shared.Command;
+using GS2.Shared.Command;
+using GS2.Shared;
 
 namespace GS2.Server.Notes
 {

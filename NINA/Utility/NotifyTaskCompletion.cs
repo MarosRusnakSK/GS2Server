@@ -12,7 +12,7 @@
 
 #endregion "copyright"
 
-using GS.Shared;
+using GS2.Shared;
 using System;
 using System.ComponentModel;
 using System.Reflection;
@@ -43,7 +43,7 @@ namespace NINA.Utility
             catch (Exception ex)
             {
                 var monitorItem = new MonitorEntry
-                { Datetime = GS.Principles.HiResDateTime.UtcNow, 
+                { Datetime = GS2.Principles.HiResDateTime.UtcNow, 
                     Device = MonitorDevice.Focuser, 
                     Category = MonitorCategory.Driver, 
                     Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, 

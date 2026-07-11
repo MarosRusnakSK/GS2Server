@@ -14,7 +14,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 using ASCOM.Utilities;
-using GS.Shared;
+using GS2.Shared;
 using System;
 using System.IO;
 using System.Net;

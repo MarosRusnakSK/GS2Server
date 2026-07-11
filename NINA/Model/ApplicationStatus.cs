@@ -12,7 +12,7 @@
 
 #endregion "copyright"
 
-using GS.Utilities.Helpers;
+using GS2.Utilities.Helpers;
 
 namespace NINA.Model
 {

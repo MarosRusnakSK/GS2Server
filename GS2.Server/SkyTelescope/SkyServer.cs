@@ -16,16 +16,16 @@
 // ReSharper disable RedundantAssignment
 using ASCOM.DeviceInterface;
 using ASCOM.Utilities;
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Alignment;
 using GS2.Server.AutoHome;
 using GS2.Server.Helpers;
 using GS2.Server.Pec;
 using GS2.Server.Pulses;
 using GS2.Server.Windows;
-using GS.Shared;
-using GS.Simulator;
-using GS.SkyWatcher;
+using GS2.Shared;
+using GS2.Simulator;
+using GS2.SkyWatcher;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,8 +40,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using static System.Math;
-using AxisStatus = GS.Simulator.AxisStatus;
-using Range = GS.Principles.Range;
+using AxisStatus = GS2.Simulator.AxisStatus;
+using Range = GS2.Principles.Range;
+using GS2.Shared;
+using GS2.Principles;
 
 
 namespace GS2.Server.SkyTelescope
@@ -2635,27 +2637,27 @@ namespace GS2.Server.SkyTelescope
             var exType = ex.GetType().ToString().Trim();
             switch (exType)
             {
-                case "GS.SkyWatcher.MountControlException":
+                case "GS2.SkyWatcher.MountControlException":
                     var mountErr = (MountControlException)ex;
                     switch (mountErr.ErrorCode)
                     {
-                        case GS.SkyWatcher.ErrorCode.ErrInvalidId:
-                        case GS.SkyWatcher.ErrorCode.ErrAlreadyConnected:
-                        case GS.SkyWatcher.ErrorCode.ErrNotConnected:
-                        case GS.SkyWatcher.ErrorCode.ErrInvalidData:
-                        case GS.SkyWatcher.ErrorCode.ErrSerialPortBusy:
-                        case GS.SkyWatcher.ErrorCode.ErrMountNotFound:
-                        case GS.SkyWatcher.ErrorCode.ErrNoResponseAxis1:
-                        case GS.SkyWatcher.ErrorCode.ErrNoResponseAxis2:
-                        case GS.SkyWatcher.ErrorCode.ErrAxisBusy:
-                        case GS.SkyWatcher.ErrorCode.ErrMaxPitch:
-                        case GS.SkyWatcher.ErrorCode.ErrMinPitch:
-                        case GS.SkyWatcher.ErrorCode.ErrUserInterrupt:
-                        case GS.SkyWatcher.ErrorCode.ErrAlignFailed:
-                        case GS.SkyWatcher.ErrorCode.ErrUnimplemented:
-                        case GS.SkyWatcher.ErrorCode.ErrWrongAlignmentData:
-                        case GS.SkyWatcher.ErrorCode.ErrQueueFailed:
-                        case GS.SkyWatcher.ErrorCode.ErrTooManyRetries:
+                        case GS2.SkyWatcher.ErrorCode.ErrInvalidId:
+                        case GS2.SkyWatcher.ErrorCode.ErrAlreadyConnected:
+                        case GS2.SkyWatcher.ErrorCode.ErrNotConnected:
+                        case GS2.SkyWatcher.ErrorCode.ErrInvalidData:
+                        case GS2.SkyWatcher.ErrorCode.ErrSerialPortBusy:
+                        case GS2.SkyWatcher.ErrorCode.ErrMountNotFound:
+                        case GS2.SkyWatcher.ErrorCode.ErrNoResponseAxis1:
+                        case GS2.SkyWatcher.ErrorCode.ErrNoResponseAxis2:
+                        case GS2.SkyWatcher.ErrorCode.ErrAxisBusy:
+                        case GS2.SkyWatcher.ErrorCode.ErrMaxPitch:
+                        case GS2.SkyWatcher.ErrorCode.ErrMinPitch:
+                        case GS2.SkyWatcher.ErrorCode.ErrUserInterrupt:
+                        case GS2.SkyWatcher.ErrorCode.ErrAlignFailed:
+                        case GS2.SkyWatcher.ErrorCode.ErrUnimplemented:
+                        case GS2.SkyWatcher.ErrorCode.ErrWrongAlignmentData:
+                        case GS2.SkyWatcher.ErrorCode.ErrQueueFailed:
+                        case GS2.SkyWatcher.ErrorCode.ErrTooManyRetries:
                             IsMountRunning = false;
                             MountError = mountErr;
                             break;
@@ -3290,11 +3292,11 @@ namespace GS2.Server.SkyTelescope
             var azimuthRate = new Vector(); // [X,Y] = [ha, dec]
             var altitudeRate = new Vector(); // [X,Y] = [ha, dec]
 
-            var latRad = GS.Principles.Units.Deg2Rad(SkySettings.Latitude);
-            var azmRad = GS.Principles.Units.Deg2Rad(Azimuth);
-            var haRad  = GS.Principles.Units.Hrs2Rad(Lha);
-            var decRad = GS.Principles.Units.Deg2Rad(targetDec);
-            var zenithAngle = GS.Principles.Units.Deg2Rad((90 - Altitude)); // in radians
+            var latRad = GS2.Principles.Units.Deg2Rad(SkySettings.Latitude);
+            var azmRad = GS2.Principles.Units.Deg2Rad(Azimuth);
+            var haRad  = GS2.Principles.Units.Hrs2Rad(Lha);
+            var decRad = GS2.Principles.Units.Deg2Rad(targetDec);
+            var zenithAngle = GS2.Principles.Units.Deg2Rad((90 - Altitude)); // in radians
 
             // get the azimuth and altitude geometry factors for changing ha
             altitudeRate.X = Sin(azmRad) * Cos(latRad);
@@ -3832,7 +3834,7 @@ namespace GS2.Server.SkyTelescope
                     degrees = steps / FactorStep[axis];
                     break;
                 case MountType.SkyWatcher:
-                    degrees = GS.Principles.Units.Rad2Deg1(steps * FactorStep[axis]);
+                    degrees = GS2.Principles.Units.Rad2Deg1(steps * FactorStep[axis]);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -5392,8 +5394,8 @@ namespace GS2.Server.SkyTelescope
             switch (SkySettings.Mount)
             {
                 case MountType.Simulator:
-                    GS.Simulator.Settings.AutoHomeAxisX = (int)SkySettings.AutoHomeAxisX;
-                    GS.Simulator.Settings.AutoHomeAxisY = (int)SkySettings.AutoHomeAxisY;
+                    GS2.Simulator.Settings.AutoHomeAxisX = (int)SkySettings.AutoHomeAxisX;
+                    GS2.Simulator.Settings.AutoHomeAxisY = (int)SkySettings.AutoHomeAxisY;
                     MountQueue.Start();
                     if (MountQueue.IsRunning) { ConnectAlignmentModel(); }
                     else

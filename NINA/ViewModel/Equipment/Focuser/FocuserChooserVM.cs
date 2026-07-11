@@ -13,9 +13,9 @@
 // Note: This is a flattened version of the NINA FocuserChooseVM and EquipmentChooserVM base class.
 #endregion "copyright"
 
-using GS.Shared;
-using GS.Shared.Command;
-using GS.Utilities.Helpers;
+using GS2.Shared.Command;
+using GS2.Utilities.Helpers;
+using GS2.Shared;
 using NINA.Model;
 using NINA.Model.MyFocuser;
 using NINA.Utility;
@@ -69,8 +69,8 @@ namespace NINA.ViewModel.Equipment.Focuser
             }
             catch (Exception ex)
             {
-                var monitorItem = new GS.Shared.MonitorEntry
-                { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Driver, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                var monitorItem = new GS2.Shared.MonitorEntry
+                { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Driver, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                 MonitorLog.LogToMonitor(monitorItem);
             }
 

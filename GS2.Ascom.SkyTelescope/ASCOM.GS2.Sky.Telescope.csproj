@@ -98,9 +98,9 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GS.Principle\GS.Principles.csproj" />
+    <ProjectReference Include="..\GS2.Principle\GS2.Principles.csproj" />
     <!-- GUID_GS2-->
     <ProjectReference Include="..\GS2.Server\GS2.Server.csproj" />
-    <ProjectReference Include="..\GS.Shared\GS.Shared.csproj" />
+    <ProjectReference Include="..\GS2.Shared\GS2.Shared.csproj" />
   </ItemGroup>
 </Project>

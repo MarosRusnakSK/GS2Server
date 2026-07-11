@@ -12,7 +12,7 @@
 
 #endregion "copyright"
 
-using GS.Utilities.Helpers;
+using GS2.Utilities.Helpers;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;

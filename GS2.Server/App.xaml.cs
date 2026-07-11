@@ -1,6 +1,6 @@
 ﻿using GS2.Server.Main;
-using GS.Shared;
-using GS.Shared.EnvironmentInfo;
+using GS2.Shared;
+using GS2.Shared.EnvironmentInfo;
 using System;
 using System.IO;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace GS2.Server
     public partial class App : IDisposable
     {
         // give the mutex a  unique name
-        // DONE: MRXXX: Updated name to be uniwue to this application.
+        // DONE: MRXXX: Updated name to be unique to this application.
         private const string MutexName = "Green Swamp Server 2";
         // declare the mutex
         private readonly Mutex _mutex;
@@ -64,7 +64,7 @@ namespace GS2.Server
                 RenderOptions.ProcessRenderMode = System.Windows.Interop.RenderMode.SoftwareOnly;
             }
             base.OnStartup(e);
-            Languages.SetLanguageDictionary(false, LanguageApp.GsServer, GS.Shared.Settings.Language);
+            Languages.SetLanguageDictionary(false, LanguageApp.GsServer, Shared.Settings.Language);
             _ = EnvironmentHelper.LogToDefaultLocationAsync();
             var app = new MainWindow();
             var context = new MainWindowVm();

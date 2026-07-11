@@ -54,14 +54,15 @@
 		</PackageReference>
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\GS.Principle\GS.Principles.csproj">
+		<ProjectReference Include="..\GS2.Principle\GS2.Principles.csproj">
 			<Private>false</Private>
 		</ProjectReference>
-		<ProjectReference Include="..\GS.Shared\GS.Shared.csproj">
+		<ProjectReference Include="..\GS2.Shared\GS2.Shared.csproj">
 			<Private>false</Private>
 		</ProjectReference>
-		<ProjectReference Include="..\GS.Utilities\GS.Utilities.csproj">
+		<ProjectReference Include="..\GS.Utilities\GS2.Utilities.csproj">
 			<Private>false</Private>
 		</ProjectReference>
+		<ProjectReference Include="..\GS2.Utilities\GS2.Utilities.csproj" />
 	</ItemGroup>
 </Project>

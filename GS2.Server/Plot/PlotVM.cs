@@ -13,10 +13,10 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Helpers;
 using GS2.Server.Main;
-using GS.Shared;
+using GS2.Shared;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
@@ -31,13 +31,14 @@ using ASCOM.DeviceInterface;
 using GS2.Server.Controls.Dialogs;
 using GS2.Server.SkyTelescope;
 using GS2.Server.Windows;
-using GS.Shared.Command;
+using GS2.Shared.Command;
 using LiveCharts;
 using LiveCharts.Configurations;
 using LiveCharts.Geared;
 using LiveCharts.Wpf;
 using Brush = System.Windows.Media.Brush;
 using Color = System.Drawing.Color;
+using GS2.Shared;
 
 namespace GS2.Server.Plot
 {

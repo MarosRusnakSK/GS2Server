@@ -2,9 +2,8 @@
 using ColorPicker;
 //using DarkSkyApi;
 //using DarkSkyApi.Models;
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.SkyTelescope;
-using GS.Shared;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -22,6 +21,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using GS2.Server.Controls.Dialogs;
+using GS2.Shared;
 
 namespace GS2.Server.Notes
 {

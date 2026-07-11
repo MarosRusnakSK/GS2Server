@@ -13,13 +13,13 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.SkyTelescope;
-using GS.Shared;
-using GS.Simulator;
+using GS2.Simulator;
 using System;
 using System.Reflection;
 using System.Threading;
+using GS2.Shared;
 
 namespace GS2.Server.AutoHome
 {
@@ -156,8 +156,8 @@ namespace GS2.Server.AutoHome
             bool? status;
             bool? loopStatus = null;
             SkyServer.AutoHomeProgressBar += 5;
-            GS.Simulator.Settings.AutoHomeAxisX = (int) SkySettings.AutoHomeAxisX;
-            GS.Simulator.Settings.AutoHomeAxisY = (int) SkySettings.AutoHomeAxisY;
+            GS2.Simulator.Settings.AutoHomeAxisX = (int) SkySettings.AutoHomeAxisX;
+            GS2.Simulator.Settings.AutoHomeAxisY = (int) SkySettings.AutoHomeAxisY;
 
             // slew away from those that start at home position
             var slewResult = SlewAxis(3.3, axis);

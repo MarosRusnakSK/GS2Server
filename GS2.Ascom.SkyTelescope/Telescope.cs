@@ -15,10 +15,9 @@
  */
 using ASCOM.DeviceInterface;
 using ASCOM.Utilities;
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Helpers;
 using GS2.Server.SkyTelescope;
-using GS.Shared;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -30,6 +29,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Threading;
+using GS2.Shared;
 
 namespace ASCOM.GS2.Sky.Telescope
 {

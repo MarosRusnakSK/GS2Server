@@ -14,13 +14,12 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Helpers;
 using GS2.Server.Main;
 using GS2.Server.SkyTelescope;
-using GS.Shared;
-using GS.Shared.Command;
-using GS.Utilities.Controls.Dialogs;
+using GS2.Shared.Command;
+using GS2.Utilities.Controls.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -42,6 +41,7 @@ using SaveFileDialog = Microsoft.Win32.SaveFileDialog;
 using System.Diagnostics.Eventing.Reader;
 using System.Windows.Threading;
 using ASCOM.DeviceInterface;
+using GS2.Shared;
 
 namespace GS2.Server.Alignment
 {

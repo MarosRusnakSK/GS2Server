@@ -14,8 +14,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 using ASCOM.DeviceInterface;
-using GS.Principles;
-using GS.Shared;
+using GS2.Principles;
+using GS2.Shared;
 using System;
 using System.Collections.Generic;
 using System.Reflection;

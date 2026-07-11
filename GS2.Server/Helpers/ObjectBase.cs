@@ -13,7 +13,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-using GS.Shared;
+using GS2.Shared;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -26,7 +26,7 @@ namespace GS2.Server.Helpers
         protected ObjectBase()
         {
             var monitorItem = new MonitorEntry
-            { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = "CountObject" };
+            { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = "CountObject" };
             MonitorLog.LogToMonitor(monitorItem);
 
             // We increment the global count of objects.
@@ -36,7 +36,7 @@ namespace GS2.Server.Helpers
         ~ObjectBase()
         {
             var monitorItem = new MonitorEntry
-            { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = "UnCountObject" };
+            { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = "UnCountObject" };
             MonitorLog.LogToMonitor(monitorItem);
 
             // We decrement the global count of objects.

@@ -16,8 +16,8 @@
  */
 
 // ReSharper disable RedundantAssignment
-using GS.Principles;
-using GS.Shared;
+using GS2.Principles;
+using GS2.Shared;
 using System;
 using System.Reflection;
 using System.Threading;

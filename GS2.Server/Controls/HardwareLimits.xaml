@@ -5,7 +5,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:skyTelescope="clr-namespace:GS2.Server.SkyTelescope"
-             xmlns:domain="clr-namespace:GS.Shared.Domain;assembly=GS.Shared"
+             xmlns:domain="clr-namespace:GS2.Shared.Domain;assembly=GS2.Shared"
              xmlns:charts="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance skyTelescope:SkyTelescopeVm}">
     <GroupBox Header="{StaticResource mhlSettingsLabel}" Margin="5">

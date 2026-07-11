@@ -58,14 +58,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GS.Principle\GS.Principles.csproj">
+    <ProjectReference Include="..\GS2.Principle\GS2.Principles.csproj">
       <Private>false</Private>
     </ProjectReference>
     <!-- GUID_GS2 -->
     <ProjectReference Include="..\GS2.Server\GS2.Server.csproj">
       <Private>false</Private>
     </ProjectReference>
-    <ProjectReference Include="..\GS.Shared\GS.Shared.csproj">
+    <ProjectReference Include="..\GS2.Shared\GS2.Shared.csproj">
       <Private>false</Private>
     </ProjectReference>
     <ProjectReference Include="..\GS.Simulator\GS.Simulator.csproj" />

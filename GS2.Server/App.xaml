@@ -44,10 +44,10 @@
                 <!--  Also add the base theme, this is required always  -->
                 <ResourceDictionary Source="pack://application:,,,/LiveCharts.Wpf;component/Themes/base.xaml" />
 
-                <!--  Add resources from GS.Shared so that they are available at design time  -->
-                <ResourceDictionary Source="pack://application:,,,/GS.Shared;component/Languages/StringResChart_en-us.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/GS.Shared;component/Languages/StringResServer_en-us.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/GS.Shared;component/Languages/StringResUtil_en-us.xaml" />
+                <!--  Add resources from GS2.Shared so that they are available at design time  -->
+                <ResourceDictionary Source="pack://application:,,,/GS2.Shared;component/Languages/StringResChart_en-us.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/GS2.Shared;component/Languages/StringResServer_en-us.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/GS2.Shared;component/Languages/StringResUtil_en-us.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/GS2.Server;component/Resources/Vectors.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

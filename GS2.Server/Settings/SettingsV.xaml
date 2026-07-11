@@ -4,10 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:shared="clr-namespace:GS.Shared;assembly=GS.Shared"
+             xmlns:shared="clr-namespace:GS2.Shared;assembly=GS2.Shared"
              xmlns:mdc="clr-namespace:MaterialDesignColors;assembly=MaterialDesignColors"
              xmlns:domain="clr-namespace:GS2.Server.Domain"
-             xmlns:domain1="clr-namespace:GS.Shared.Domain;assembly=GS.Shared"
+             xmlns:domain1="clr-namespace:GS2.Shared.Domain;assembly=GS2.Shared"
              xmlns:settings="clr-namespace:GS2.Server.Settings"
              d:DataContext="{d:DesignInstance Type=settings:SettingsVm}"
              mc:Ignorable="d">
@@ -413,7 +413,7 @@
                                     <Button Margin="0,24,0,0" Height="30" ToolTip="{StaticResource optCheckUpdates}" Style="{StaticResource MaterialDesignRaisedDarkButton}" Command="{Binding OpenUpdateDialogCmd}" Content="{StaticResource optCheckUpdates}">
                                     </Button>
                                 </md:DialogHost>
-                                <Button Margin="0,10,0,0" Height="30" ToolTip="GS.Utilities.exe" Style="{StaticResource MaterialDesignRaisedDarkButton}" Command="{Binding ClickUtilCmd}" Content="GS.Utilities.exe">
+                                <Button Margin="0,10,0,0" Height="30" ToolTip="GS2.Utilities.exe" Style="{StaticResource MaterialDesignRaisedDarkButton}" Command="{Binding ClickUtilCmd}" Content="GS2.Utilities.exe">
                                 </Button>
                             </StackPanel>
                             <StackPanel Grid.Row="1" Grid.Column="3" Orientation="Vertical" HorizontalAlignment="Left" Margin="0,0,0,0">

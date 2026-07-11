@@ -17,7 +17,7 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using GS.Shared.Domain;
+using GS2.Shared.Domain;
 
 namespace GS2.Server.Controls.Dialogs
 {

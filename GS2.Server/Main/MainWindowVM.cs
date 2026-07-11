@@ -25,7 +25,7 @@ using GS2.Server.PoleLocator;
 using GS2.Server.Pulses;
 using GS2.Server.Settings;
 using GS2.Server.SkyTelescope;
-using GS.Shared;
+using GS2.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,7 +35,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
-using GS.Shared.Command;
+using GS2.Shared.Command;
 using GS2.Server.Pec;
 using GS2.Server.Snap;
 using GS2.Server.Alignment;
@@ -85,11 +85,11 @@ namespace GS2.Server.Main
                     Version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Ui, Category = MonitorCategory.Interface, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{Assembly.GetExecutingAssembly()}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Ui, Category = MonitorCategory.Interface, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{Assembly.GetExecutingAssembly()}" };
                     MonitorLog.LogToMonitor(monitorItem);
 
                     monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Ui, Category = MonitorCategory.Interface, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = "Loading MainWindowVM" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Ui, Category = MonitorCategory.Interface, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = "Loading MainWindowVM" };
                     MonitorLog.LogToMonitor(monitorItem);
 
                     AppCount = GSServer.AppCount;
@@ -127,7 +127,7 @@ namespace GS2.Server.Main
             catch (Exception ex)
             {
                 var monitorItem = new MonitorEntry
-                { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Ui, Category = MonitorCategory.Interface, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Ui, Category = MonitorCategory.Interface, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                 MonitorLog.LogToMonitor(monitorItem);
 
                 throw;
@@ -442,7 +442,7 @@ namespace GS2.Server.Main
                 .FirstOrDefault(vm => vm == viewModel);
 
             var monitorItem = new MonitorEntry
-            { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Ui, Category = MonitorCategory.Interface, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{viewModel}" };
+            { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Ui, Category = MonitorCategory.Interface, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{viewModel}" };
             MonitorLog.LogToMonitor(monitorItem);
         }
 

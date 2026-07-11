@@ -18,8 +18,8 @@
 using ASCOM.DeviceInterface;
 using ASCOM.Utilities;
 using Gma.System.MouseKeyHook;
-using GS.FitsImageManager;
-using GS.Principles;
+using GS2.FitsImageManager;
+using GS2.Principles;
 using GS2.Server.Cdc;
 using GS2.Server.Controls.Dialogs;
 using GS2.Server.Gps;
@@ -27,9 +27,9 @@ using GS2.Server.Helpers;
 using GS2.Server.Main;
 using GS2.Server.Pulses;
 using GS2.Server.Windows;
-using GS.Shared;
-using GS.Shared.Command;
-using GS.Shared.Transport;
+using GS2.Shared;
+using GS2.Shared.Command;
+using GS2.Shared.Transport;
 using HelixToolkit.Wpf;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
@@ -115,7 +115,7 @@ namespace GS2.Server.SkyTelescope
                     MonitorQueue.StaticPropertyChanged += PropertyChangedMonitorQueue;
                     SkySystem.StaticPropertyChanged += PropertyChangedSkySystem;
                     SkySettings.StaticPropertyChanged += PropertyChangedSkySettings;
-                    GS.Shared.Settings.StaticPropertyChanged += PropertyChangedMonitorLog;
+                    Shared.Settings.StaticPropertyChanged += PropertyChangedMonitorLog;
                     Settings.Settings.StaticPropertyChanged += PropertyChangedSettings;
                     ParkPositionViewModel.Instance.PropertyChanged += PropertyChangedParkPositionViewModel;
                     GlobalStopOn = SkySettings.GlobalStopOn;
@@ -847,7 +847,7 @@ namespace GS2.Server.SkyTelescope
                 switch (e.PropertyName)
                 {
                     case "Start":
-                        MonitorState = GS.Shared.Settings.StartMonitor;
+                        MonitorState = Shared.Settings.StartMonitor;
                         break;
                 }
             }
@@ -1444,7 +1444,7 @@ namespace GS2.Server.SkyTelescope
             }
             set
             {
-                var l = Math.Abs(GS.Principles.Units.Deg2Dou(value, Lat2, Lat3));
+                var l = Math.Abs(GS2.Principles.Units.Deg2Dou(value, Lat2, Lat3));
                 if (Lat0 == "S"){l = -l;}
                 if (Math.Abs(l - SkySettings.Latitude) < 0.0000000000001){return;}
                 SkySettings.Latitude = l;
@@ -1463,7 +1463,7 @@ namespace GS2.Server.SkyTelescope
             }
             set
             {
-                var l = Math.Abs(GS.Principles.Units.Deg2Dou(Lat1, value, Lat3));
+                var l = Math.Abs(GS2.Principles.Units.Deg2Dou(Lat1, value, Lat3));
                 if (Lat0 == "S") l = -l;
                 if (Math.Abs(l - SkySettings.Latitude) < 0.0000000000001) return;
                 SkySettings.Latitude = l;
@@ -1481,7 +1481,7 @@ namespace GS2.Server.SkyTelescope
             }
             set
             {
-                var l = Math.Abs(GS.Principles.Units.Deg2Dou(Lat1, Lat2, value));
+                var l = Math.Abs(GS2.Principles.Units.Deg2Dou(Lat1, Lat2, value));
                 if (Lat0 == "S") l = -l;
                 if (Math.Abs(l - SkySettings.Latitude) < 0.0000000000001) return;
                 SkySettings.Latitude = l;
@@ -1509,7 +1509,7 @@ namespace GS2.Server.SkyTelescope
             }
             set
             {
-                var l = Math.Abs(GS.Principles.Units.Deg2Dou(value, Long2, Long3));
+                var l = Math.Abs(GS2.Principles.Units.Deg2Dou(value, Long2, Long3));
                 if (Long0 == "W") l = -l;
                 if (Math.Abs(l - SkySettings.Longitude) < 0.0000000000001) return;
                 SkySettings.Longitude = l;
@@ -1527,7 +1527,7 @@ namespace GS2.Server.SkyTelescope
             }
             set
             {
-                var l = GS.Principles.Units.Deg2Dou(Long1, value, Long3);
+                var l = GS2.Principles.Units.Deg2Dou(Long1, value, Long3);
                 if (Long0 == "W") l = -l;
                 if (Math.Abs(l - SkySettings.Longitude) < 0.0000000000001) return;
                 SkySettings.Longitude = l;
@@ -1545,7 +1545,7 @@ namespace GS2.Server.SkyTelescope
             }
             set
             {
-                var l = GS.Principles.Units.Deg2Dou(Long1, Long2, value);
+                var l = GS2.Principles.Units.Deg2Dou(Long1, Long2, value);
                 if (Long0 == "W") l = -l;
                 if (Math.Abs(l - SkySettings.Longitude) < 0.0000000000001) return;
                 SkySettings.Longitude = l;
@@ -2754,7 +2754,7 @@ namespace GS2.Server.SkyTelescope
                     case AlignmentModes.algGermanPolar:
                         break;
                 }
-                var modelFile = GS.Shared.Model3D.GetModelFile(Settings.Settings.ModelType, suffix);
+                var modelFile = GS2.Shared.Model3D.GetModelFile(Settings.Settings.ModelType, suffix);
                 if (string.IsNullOrEmpty(modelFile) || modelFile == ModelFileName) return;
 
                 // All good so load models
@@ -2795,7 +2795,7 @@ namespace GS2.Server.SkyTelescope
                 var model = import.Load(ModelFileName);
 
                 //load compass and pier model
-                Compass = MaterialHelper.CreateImageMaterial(GS.Shared.Model3D.GetCompassFile(SkyServer.SouthernHemisphere, SkySettings.AlignmentMode == AlignmentModes.algAltAz), 100);
+                Compass = MaterialHelper.CreateImageMaterial(GS2.Shared.Model3D.GetCompassFile(SkyServer.SouthernHemisphere, SkySettings.AlignmentMode == AlignmentModes.algAltAz), 100);
                 LoadPierModel();
 
                 // set up OTA color
@@ -2870,7 +2870,7 @@ namespace GS2.Server.SkyTelescope
         {
             if (Graphic != FrontGraphic.Model3D) { return; }
             
-            var axes = GS.Shared.Model3D.RotateModel(SkySettings.Mount.ToString(), SkyServer.ActualAxisX,
+            var axes = GS2.Shared.Model3D.RotateModel(SkySettings.Mount.ToString(), SkyServer.ActualAxisX,
                SkyServer.ActualAxisY, SkyServer.SouthernHemisphere, SkySettings.AlignmentMode, (int)SkyServer.PolarMode3D);
 
             YAxis = axes[0];
@@ -6581,8 +6581,8 @@ namespace GS2.Server.SkyTelescope
         {
             var width = SkySettings.SpiralWidth / 15.0;
             var height = SkySettings.SpiralHeight;
-            var raAdd = GS.Principles.Units.Ra2Dou(0, 0, width);
-            var decAdd = GS.Principles.Units.Deg2Dou(0, 0, height);
+            var raAdd = GS2.Principles.Units.Ra2Dou(0, 0, width);
+            var decAdd = GS2.Principles.Units.Deg2Dou(0, 0, height);
 
             var count = 0;
             var index = 0;
@@ -7261,7 +7261,7 @@ namespace GS2.Server.SkyTelescope
         }
         public bool MonitorState
         {
-            get => GS.Shared.Settings.StartMonitor;
+            get => Shared.Settings.StartMonitor;
             set
             {
                 if (value == MonitorState) return;
@@ -9326,8 +9326,8 @@ namespace GS2.Server.SkyTelescope
         #endregion
 
         #region GoTo RA Dec Dialog
-        public double GoToDec => GS.Principles.Units.Deg2Dou(DecDegrees, DecMinutes, DecSeconds);
-        public double GoToRa => GS.Principles.Units.Ra2Dou(RaHours, RaMinutes, RaSeconds);
+        public double GoToDec => GS2.Principles.Units.Deg2Dou(DecDegrees, DecMinutes, DecSeconds);
+        public double GoToRa => GS2.Principles.Units.Ra2Dou(RaHours, RaMinutes, RaSeconds);
         public string GoToDecString => Util.DegreesToDMS(GoToDec, "° ", "m ", "s", 3);
         public string GoToRaString => Util.HoursToHMS(GoToRa, "h ", "m ", "s", 3);
 
@@ -9784,8 +9784,8 @@ namespace GS2.Server.SkyTelescope
         #endregion
 
         #region GoTo Az Alt Dialog
-        public double GoToAlt => GS.Principles.Units.Deg2Dou(AltDegrees, AltMinutes, AltSeconds);
-        public double GoToAz => GS.Principles.Units.Deg2Dou(AzDegrees, AzMinutes, AzSeconds);
+        public double GoToAlt => GS2.Principles.Units.Deg2Dou(AltDegrees, AltMinutes, AltSeconds);
+        public double GoToAz => GS2.Principles.Units.Deg2Dou(AzDegrees, AzMinutes, AzSeconds);
         public string GoToAltString => Util.DegreesToDMS(GoToAlt, "° ", "m ", "s", 3);
         public string GoToAzString => Util.DegreesToDMS(GoToAz, "° ", "m ", "s", 3);
 
@@ -12047,7 +12047,7 @@ namespace GS2.Server.SkyTelescope
             {
                 using (new WaitCursor())
                 {
-                    var cultureInfo = CultureInfo.GetCultureInfo(GS.Shared.Settings.Language);
+                    var cultureInfo = CultureInfo.GetCultureInfo(Shared.Settings.Language);
                     DialogContent = new MountInfoDialog();
                     MountName = SkyServer.MountName;
                     MountVersion = SkyServer.MountVersion;

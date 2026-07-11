@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:skyTelescope="clr-namespace:GS2.Server.SkyTelescope" 
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes" 
-             xmlns:domain="clr-namespace:GS.Shared.Domain;assembly=GS.Shared" 
+             xmlns:domain="clr-namespace:GS2.Shared.Domain;assembly=GS2.Shared" 
              xmlns:domain1="clr-namespace:GS2.Server.Domain" 
              mc:Ignorable="d" d:DataContext="{d:DesignInstance skyTelescope:SkyTelescopeVm}">
     <GroupBox Header="{StaticResource gpsDecimals}" Margin="5">

@@ -14,11 +14,11 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 using ASCOM.Utilities;
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Helpers;
 using GS2.Server.Main;
 using GS2.Server.SkyTelescope;
-using GS.Shared;
+using GS2.Shared;
 using HelixToolkit.Wpf;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
@@ -35,7 +35,7 @@ using System.Windows.Media;
 using System.Windows.Media.Media3D;
 using GS2.Server.Controls.Dialogs;
 using GS2.Server.Windows;
-using GS.Shared.Command;
+using GS2.Shared.Command;
 using ASCOM.DeviceInterface;
 using Vector = System.Windows.Vector;
 
@@ -1011,7 +1011,7 @@ namespace GS2.Server.Model3D
                     case AlignmentModes.algGermanPolar:
                         break;
                 }
-                var modelFile = GS.Shared.Model3D.GetModelFile(Settings.Settings.ModelType, suffix);
+                var modelFile = GS2.Shared.Model3D.GetModelFile(Settings.Settings.ModelType, suffix);
                 if (string.IsNullOrEmpty(modelFile) || modelFile == ModelFileName) return;
 
                 // All good so load models
@@ -1047,7 +1047,7 @@ namespace GS2.Server.Model3D
                 }
 
                 //load compass, pier model and telescope model
-                Compass = MaterialHelper.CreateImageMaterial(GS.Shared.Model3D.GetCompassFile(SkyServer.SouthernHemisphere, SkySettings.AlignmentMode == AlignmentModes.algAltAz), 100);
+                Compass = MaterialHelper.CreateImageMaterial(GS2.Shared.Model3D.GetCompassFile(SkyServer.SouthernHemisphere, SkySettings.AlignmentMode == AlignmentModes.algAltAz), 100);
                 LoadPierModel();
 
                 var import = new ModelImporter();
@@ -1171,7 +1171,7 @@ namespace GS2.Server.Model3D
 
         private void Rotate()
         {
-            var axes = GS.Shared.Model3D.RotateModel(SkySettings.Mount.ToString(), SkyServer.ActualAxisX,
+            var axes = GS2.Shared.Model3D.RotateModel(SkySettings.Mount.ToString(), SkyServer.ActualAxisX,
                SkyServer.ActualAxisY, SkyServer.SouthernHemisphere, SkySettings.AlignmentMode, (int) SkyServer.PolarMode);
 
             YAxis = axes[0];

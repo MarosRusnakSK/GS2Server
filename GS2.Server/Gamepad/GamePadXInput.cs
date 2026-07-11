@@ -41,9 +41,9 @@ SOFTWARE.
 using System;
 using System.Reflection;
 using System.Threading;
-using GS.Principles;
+using GS2.Principles;
 //using GS2.Server.Properties;
-using GS.Shared;
+using GS2.Shared;
 using XInputDotNetPure;
 
 namespace GS2.Server.GamePad

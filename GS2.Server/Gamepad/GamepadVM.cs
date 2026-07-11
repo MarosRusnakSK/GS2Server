@@ -14,12 +14,12 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 using ASCOM.DeviceInterface;
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Helpers;
 using GS2.Server.Main;
 using GS2.Server.Settings;
 using GS2.Server.SkyTelescope;
-using GS.Shared;
+using GS2.Shared;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Diagnostics;
@@ -30,7 +30,7 @@ using System.Windows;
 using System.Windows.Input;
 using GS2.Server.Controls.Dialogs;
 using GS2.Server.Windows;
-using GS.Shared.Command;
+using GS2.Shared.Command;
 using GS2.Server.Focuser;
 using System.Collections.Generic;
 

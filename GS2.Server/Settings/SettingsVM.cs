@@ -17,7 +17,7 @@
 using GS2.Server.Helpers;
 using GS2.Server.Main;
 using GS2.Server.SkyTelescope;
-using GS.Shared;
+using GS2.Shared;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Win32;
@@ -33,10 +33,10 @@ using System.Reflection;
 using System.Threading;
 using System.Windows;
 using System.Windows.Input;
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Controls.Dialogs;
 using GS2.Server.Windows;
-using GS.Shared.Command;
+using GS2.Shared.Command;
 using ASCOM.DeviceInterface;
 
 namespace GS2.Server.Settings
@@ -86,7 +86,7 @@ namespace GS2.Server.Settings
                     MonitorQueue.StaticPropertyChanged += PropertyChangedMonitorQueue;
 
                     MonitorEntries = new ObservableCollection<MonitorEntry>();
-                    StartStopButtonText = GS.Shared.Settings.StartMonitor ?"Stop" : "Start";
+                    StartStopButtonText = Shared.Settings.StartMonitor ?"Stop" : "Start";
 
                     _mainWindowVm = MainWindowVm.MainWindow1Vm;
                     SleepMode = Settings.SleepMode;
@@ -373,14 +373,14 @@ namespace GS2.Server.Settings
             }
         }
 
-        public List<string> Languages => GS.Shared.Languages.SupportedLanguages;
+        public List<string> Languages => GS2.Shared.Languages.SupportedLanguages;
 
         public string Lang
         {
-            get => GS.Shared.Languages.Language;
+            get => GS2.Shared.Languages.Language;
             set
             {
-                GS.Shared.Languages.Language = value;
+                GS2.Shared.Languages.Language = value;
                 OnPropertyChanged();
                 OpenDialog("Restart GS Server");
             }
@@ -736,7 +736,7 @@ namespace GS2.Server.Settings
         {
             try
             {
-                Process.Start(new ProcessStartInfo(Path.Combine(Environment.CurrentDirectory, "GS.Utilities.exe")));
+                Process.Start(new ProcessStartInfo(Path.Combine(Environment.CurrentDirectory, "GS2.Utilities.exe")));
             }
             catch (Exception ex)
             {
@@ -888,22 +888,22 @@ namespace GS2.Server.Settings
 
         public bool SessionLog
         {
-            get => GS.Shared.Settings.LogSession;
+            get => Shared.Settings.LogSession;
             set
             {
                 if (MonitorToFile == value) return;
-                GS.Shared.Settings.LogSession = value;
+                Shared.Settings.LogSession = value;
                 OnPropertyChanged();
             }
         }
 
         public bool MonitorToFile
         {
-            get => GS.Shared.Settings.LogMonitor;
+            get => Shared.Settings.LogMonitor;
             set
             {
                 if (MonitorToFile == value) return;
-                GS.Shared.Settings.LogMonitor = value;
+                Shared.Settings.LogMonitor = value;
                 OnPropertyChanged();
             }
         }
@@ -1035,7 +1035,7 @@ namespace GS2.Server.Settings
             {
                 using (new WaitCursor())
                 {
-                    GS.Shared.Settings.StartMonitor = !GS.Shared.Settings.StartMonitor;
+                    Shared.Settings.StartMonitor = !Shared.Settings.StartMonitor;
                     StartStopButtonText = StartStopButtonText == "Start" ? "Stop" : "Start";
                 }
             }
@@ -1120,7 +1120,7 @@ namespace GS2.Server.Settings
             StreamWriter stream = null;
             try
             {
-                GS.Shared.Settings.StartMonitor = false;
+                Shared.Settings.StartMonitor = false;
                 var saveFileDialog = new SaveFileDialog
                 {
                     InitialDirectory = @"C:\",
@@ -1655,9 +1655,9 @@ namespace GS2.Server.Settings
 
                     if (MonitorSettings)
                     {
-                        GS.Shared.Properties.Monitor.Default.Reset();
-                        GS.Shared.Properties.Monitor.Default.Save();
-                        GS.Shared.Properties.Monitor.Default.Reload();
+                        GS2.Shared.Properties.Monitor.Default.Reset();
+                        GS2.Shared.Properties.Monitor.Default.Save();
+                        GS2.Shared.Properties.Monitor.Default.Reload();
                     }
 
                     IsDialogOpen = false;

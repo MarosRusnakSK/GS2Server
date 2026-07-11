@@ -7,7 +7,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:deviceInterface="clr-namespace:ASCOM.DeviceInterface;assembly=ASCOM.DeviceInterfaces"
              xmlns:domain="clr-namespace:GS2.Server.Domain"
-             xmlns:domain1="clr-namespace:GS.Shared.Domain;assembly=GS.Shared"
+             xmlns:domain1="clr-namespace:GS2.Shared.Domain;assembly=GS2.Shared"
              xmlns:enums="clr-namespace:ASCOM.Utilities;assembly=ASCOM.Utilities"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"

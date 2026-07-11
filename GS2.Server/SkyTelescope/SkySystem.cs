@@ -13,8 +13,8 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-using GS.Shared;
-using GS.Shared.Transport;
+using GS2.Shared;
+using GS2.Shared.Transport;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -91,7 +91,7 @@ namespace GS2.Server.SkyTelescope
 
                 var monitorItem = new MonitorEntry
                 {
-                    Datetime = GS.Principles.HiResDateTime.UtcNow,
+                    Datetime = GS2.Principles.HiResDateTime.UtcNow,
                     Device = MonitorDevice.Server,
                     Category = MonitorCategory.Server,
                     Type = MonitorType.Information,
@@ -109,7 +109,7 @@ namespace GS2.Server.SkyTelescope
 
                 var monitorItem = new MonitorEntry
                 {
-                    Datetime = GS.Principles.HiResDateTime.UtcNow,
+                    Datetime = GS2.Principles.HiResDateTime.UtcNow,
                     Device = MonitorDevice.Server,
                     Category = MonitorCategory.Server,
                     Type = MonitorType.Information,
@@ -199,7 +199,7 @@ namespace GS2.Server.SkyTelescope
                     Error = ex;
                     var monitorItem = new MonitorEntry
                     {
-                        Datetime = GS.Principles.HiResDateTime.UtcNow,
+                        Datetime = GS2.Principles.HiResDateTime.UtcNow,
                         Device = MonitorDevice.Server,
                         Category = MonitorCategory.Server,
                         Type = MonitorType.Warning,

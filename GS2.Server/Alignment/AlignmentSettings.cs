@@ -16,11 +16,11 @@
  */
 
 using System;
-using GS.Shared;
 using System.ComponentModel;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using GS2.Shared;
 
 namespace GS2.Server.Alignment
 {
@@ -225,7 +225,7 @@ namespace GS2.Server.Alignment
         private static void LogSetting(string method, string value)
         {
             var monitorItem = new MonitorEntry
-            { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Information, Method = $"{method}", Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{value}" };
+            { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Information, Method = $"{method}", Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{value}" };
             MonitorLog.LogToMonitor(monitorItem);
         }
 

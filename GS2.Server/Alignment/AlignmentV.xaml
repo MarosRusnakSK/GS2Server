@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:domain="clr-namespace:GS.Shared.Domain;assembly=GS.Shared"
+             xmlns:domain="clr-namespace:GS2.Shared.Domain;assembly=GS2.Shared"
              xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
              xmlns:alignment="clr-namespace:GS2.Server.Alignment"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance alignment:AlignmentVM}">

@@ -72,7 +72,7 @@
 //  the motor assembly.
 //
 
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.SkyTelescope;
 using System;
 using System.Collections.Generic;
@@ -81,7 +81,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Windows.Media.Converters;
-using GS.Simulator;
+using GS2.Simulator;
 using ASCOM.DeviceInterface;
 
 namespace GS2.Server.Alignment

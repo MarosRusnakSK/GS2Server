@@ -13,8 +13,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. 
  */
-using GS.Principles;
-using GS.Shared;
+using GS2.Principles;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -22,6 +21,7 @@ using System.Speech.Synthesis;
 //using Microsoft.Speech.Synthesis;
 using System.Threading;
 using GS2.Server.SkyTelescope;
+using GS2.Shared;
 
 namespace GS2.Server.Helpers
 {

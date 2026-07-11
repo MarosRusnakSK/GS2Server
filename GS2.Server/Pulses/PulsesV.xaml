@@ -7,9 +7,9 @@
              xmlns:wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              xmlns:domain="clr-namespace:GS2.Server.Domain"
              xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
-             xmlns:shared="clr-namespace:GS.Shared;assembly=GS.Shared"
+             xmlns:shared="clr-namespace:GS2.Shared;assembly=GS2.Shared"
              xmlns:enums="clr-namespace:LiveCharts.Geared;assembly=LiveCharts.Geared"
-             xmlns:domain1="clr-namespace:GS.Shared.Domain;assembly=GS.Shared"
+             xmlns:domain1="clr-namespace:GS2.Shared.Domain;assembly=GS2.Shared"
              xmlns:pulses="clr-namespace:GS2.Server.Pulses"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance pulses:PulsesVM}">
     <UserControl.Resources>

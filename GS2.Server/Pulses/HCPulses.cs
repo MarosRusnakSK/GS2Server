@@ -19,9 +19,9 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.Remoting.Channels;
 using System.Threading;
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.SkyTelescope;
-using GS.Shared;
+using GS2.Shared;
 
 namespace GS2.Server.Pulses
 {

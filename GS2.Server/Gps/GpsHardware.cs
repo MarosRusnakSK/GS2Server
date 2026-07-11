@@ -14,7 +14,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 using ASCOM.Utilities;
-using GS.Shared;
+using GS2.Shared;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -151,7 +151,7 @@ namespace GS2.Server.Gps
             {
                 ClearProperties();
                 HasData = false;
-                PcUtcNow = GS.Principles.HiResDateTime.UtcNow;
+                PcUtcNow = GS2.Principles.HiResDateTime.UtcNow;
                 var receivedData = serial.ReadLine();
                 //var receivedData = "$GPGGA,010537,2934.2442,N,09816.2099,W,1,05,2.1,227.0,M,-22.2,M,,*76\r\n";
                 if (receivedData.Length <= 0) continue;
@@ -326,7 +326,7 @@ namespace GS2.Server.Gps
             catch (Exception ex)
             {
                 var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}|{ex.StackTrace}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}|{ex.StackTrace}" };
                 MonitorLog.LogToMonitor(monitorItem);
             }
             
@@ -396,7 +396,7 @@ namespace GS2.Server.Gps
             catch (Exception ex)
             {
                 var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}|{ex.StackTrace}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}|{ex.StackTrace}" };
                 MonitorLog.LogToMonitor(monitorItem);
             }
         }
@@ -458,7 +458,7 @@ namespace GS2.Server.Gps
                 {
                     var monitorItem = new MonitorEntry
                     {
-                        Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server,
+                        Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server,
                         Category = MonitorCategory.Server, Type = MonitorType.Error,
                         Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId,
                         Message = $"Failed Conversion|{num}|{dir}"
@@ -483,7 +483,7 @@ namespace GS2.Server.Gps
             catch (Exception ex)
             {
                 var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}|{ex.StackTrace}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}|{ex.StackTrace}" };
                 MonitorLog.LogToMonitor(monitorItem);
                 return 0;
             }
@@ -517,7 +517,7 @@ namespace GS2.Server.Gps
             catch (Exception ex)
             {
                 var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}|{ex.StackTrace}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}|{ex.StackTrace}" };
                 MonitorLog.LogToMonitor(monitorItem);
                 return PcUtcNow;
             }

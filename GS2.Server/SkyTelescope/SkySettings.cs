@@ -15,9 +15,9 @@
  */
 using ASCOM.DeviceInterface;
 using ASCOM.Utilities;
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Pulses;
-using GS.Shared;
+using GS2.Shared;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -2844,7 +2844,7 @@ namespace GS2.Server.SkyTelescope
         private static void LogSetting(string method, string value)
         {
             var monitorItem = new MonitorEntry
-            { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Information, Method = $"{method}", Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{value}" };
+            { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Server, Category = MonitorCategory.Server, Type = MonitorType.Information, Method = $"{method}", Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{value}" };
             MonitorLog.LogToMonitor(monitorItem);
         }
 

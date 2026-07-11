@@ -20,8 +20,8 @@ using System.Threading;
 using ASCOM.Astrometry.Transform;
 using ASCOM.DeviceInterface;
 using System.Windows;
-using GS.Principles;
-using GS.Shared;
+using GS2.Principles;
+using GS2.Shared;
 
 namespace GS2.Server.SkyTelescope
 {

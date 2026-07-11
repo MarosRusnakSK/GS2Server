@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         mc:Ignorable="d" 
-        xmlns:domain1="clr-namespace:GS.Shared.Domain;assembly=GS.Shared"
+        xmlns:domain1="clr-namespace:GS2.Shared.Domain;assembly=GS2.Shared"
         xmlns:domain="clr-namespace:GS2.Server.Domain">
     <GroupBox Header="{StaticResource goDec}" Margin="5">
         <StackPanel Orientation="Vertical">

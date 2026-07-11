@@ -21,13 +21,13 @@ using System.Reflection;
 using System.Threading;
 using System.Windows;
 using System.Windows.Input;
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Controls.Dialogs;
 using GS2.Server.Helpers;
 using GS2.Server.Pulses;
 using GS2.Server.SkyTelescope;
-using GS.Shared;
-using GS.Shared.Command;
+using GS2.Shared;
+using GS2.Shared.Command;
 using MaterialDesignThemes.Wpf;
 using NativeMethods = GS2.Server.Helpers.NativeMethods;
 

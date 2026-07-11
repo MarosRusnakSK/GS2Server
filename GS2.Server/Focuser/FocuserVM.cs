@@ -13,12 +13,11 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Helpers;
 using GS2.Server.Main;
-using GS.Shared;
-using GS.Shared.Command;
-using GS.Utilities.Controls.Dialogs;
+using GS2.Shared.Command;
+using GS2.Utilities.Controls.Dialogs;
 using NINA.Model.MyFocuser;
 using NINA.Utility;
 using NINA.ViewModel.Equipment.Focuser;
@@ -30,6 +29,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+using GS2.Shared;
 
 namespace GS2.Server.Focuser
 {

@@ -13,10 +13,10 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Helpers;
 using GS2.Server.Main;
-using GS.Shared;
+using GS2.Shared;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.ComponentModel;
@@ -30,7 +30,7 @@ using GS2.Server.Controls.Dialogs;
 using GS2.Server.Phd;
 using GS2.Server.SkyTelescope;
 using GS2.Server.Windows;
-using GS.Shared.Command;
+using GS2.Shared.Command;
 using Newtonsoft.Json.Linq;
 
 namespace GS2.Server.Snap

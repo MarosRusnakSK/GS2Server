@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:domain="clr-namespace:GS2.Server.Domain"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:domain1="clr-namespace:GS.Shared.Domain;assembly=GS.Shared"
+        xmlns:domain1="clr-namespace:GS2.Shared.Domain;assembly=GS2.Shared"
         xmlns:windows="clr-namespace:GS2.Server.Windows"
         d:DataContext="{d:DesignInstance windows:SpiralVM, IsDesignTimeCreatable=True}" mc:Ignorable="d" >
     <UserControl.Resources>

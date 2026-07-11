@@ -13,8 +13,8 @@
 #endregion "copyright"
 
 using ASCOM;
-using GS.Shared;
-using GS.Utilities.Helpers;
+using GS2.Utilities.Helpers;
+using GS2.Shared;
 using System;
 using System.Reflection;
 using System.Threading;
@@ -130,13 +130,13 @@ namespace NINA.Model.MyFocuser
                 catch (DriverException ex)
                 {
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                     MonitorLog.LogToMonitor(monitorItem);
                 }
                 catch (Exception ex)
                 {
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                     MonitorLog.LogToMonitor(monitorItem);
                 }
                 return pos;
@@ -168,13 +168,13 @@ namespace NINA.Model.MyFocuser
                 catch (DriverException ex)
                 {
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                     MonitorLog.LogToMonitor(monitorItem);
                 }
                 catch (Exception ex)
                 {
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                     MonitorLog.LogToMonitor(monitorItem);
                 }
                 return stepSize;
@@ -243,13 +243,13 @@ namespace NINA.Model.MyFocuser
                 catch (DriverException ex)
                 {
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                     MonitorLog.LogToMonitor(monitorItem);
                 }
                 catch (Exception ex)
                 {
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                     MonitorLog.LogToMonitor(monitorItem);
                 }
                 return temperature;
@@ -271,7 +271,7 @@ namespace NINA.Model.MyFocuser
                         if (_connected != val)
                         {
                             var monitorItem = new MonitorEntry
-                            { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = "Focuser connection lost" };
+                            { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = "Focuser connection lost" };
                             MonitorLog.LogToMonitor(monitorItem);
                             Disconnect();
                         }
@@ -279,11 +279,11 @@ namespace NINA.Model.MyFocuser
                     catch (Exception ex)
                     {
                         var monitorItem = new MonitorEntry
-                        { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                        { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                         MonitorLog.LogToMonitor(monitorItem);
                         
                         monitorItem = new MonitorEntry
-                        { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = "Focuser connection lost" };
+                        { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = "Focuser connection lost" };
                         MonitorLog.LogToMonitor(monitorItem);
                         try
                         {
@@ -292,7 +292,7 @@ namespace NINA.Model.MyFocuser
                         catch (Exception disconnectEx)
                         {
                             monitorItem = new MonitorEntry
-                            { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{disconnectEx.Message}" };
+                            { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{disconnectEx.Message}" };
                             MonitorLog.LogToMonitor(monitorItem);
                         }
                     }
@@ -313,11 +313,11 @@ namespace NINA.Model.MyFocuser
                 catch (Exception ex)
                 {
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                     MonitorLog.LogToMonitor(monitorItem);
 
                     monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = "Reconnect focuser" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Information, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = "Reconnect focuser" };
                     MonitorLog.LogToMonitor(monitorItem);
                     _connected = false;
                 }
@@ -347,7 +347,7 @@ namespace NINA.Model.MyFocuser
                 catch (Exception ex)
                 {
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                     MonitorLog.LogToMonitor(monitorItem);
                 }
             }
@@ -406,7 +406,7 @@ namespace NINA.Model.MyFocuser
                 catch (Exception ex)
                 {
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Other, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                     MonitorLog.LogToMonitor(monitorItem);
 
                     // TODO: Notification.ShowError(ex.Message);
@@ -431,20 +431,20 @@ namespace NINA.Model.MyFocuser
                 {
                     // Utility.Utility.HandleAscomCOMException(ex);
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Driver, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Driver, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                     MonitorLog.LogToMonitor(monitorItem);
                 }
                 catch (System.Runtime.InteropServices.COMException ex)
                 {
                     // Utility.Utility.HandleAscomCOMException(ex);
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Driver, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Driver, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                     MonitorLog.LogToMonitor(monitorItem);
                 }
                 catch (Exception ex)
                 {
                     var monitorItem = new MonitorEntry
-                    { Datetime = GS.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Driver, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
+                    { Datetime = GS2.Principles.HiResDateTime.UtcNow, Device = MonitorDevice.Focuser, Category = MonitorCategory.Driver, Type = MonitorType.Error, Method = MethodBase.GetCurrentMethod()?.Name, Thread = Thread.CurrentThread.ManagedThreadId, Message = $"{ex.Message}" };
                     MonitorLog.LogToMonitor(monitorItem);
 
                     // TODO: Notification.ShowError("Unable to connect to focuser " + ex.Message);

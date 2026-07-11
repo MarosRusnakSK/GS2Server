@@ -26,12 +26,12 @@ using System.Windows.Media;
 using System.Windows.Media.Media3D;
 using ASCOM.DeviceInterface;
 using ASCOM.Utilities;
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.Controls.Dialogs;
 using GS2.Server.Helpers;
 using GS2.Server.SkyTelescope;
-using GS.Shared;
-using GS.Shared.Command;
+using GS2.Shared;
+using GS2.Shared.Command;
 using HelixToolkit.Wpf;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
@@ -604,7 +604,7 @@ namespace GS2.Server.Windows
                     case AlignmentModes.algGermanPolar:
                         break;
                 }
-                var modelFile = GS.Shared.Model3D.GetModelFile(Settings.Settings.ModelType, suffix);
+                var modelFile = GS2.Shared.Model3D.GetModelFile(Settings.Settings.ModelType, suffix);
                 if (string.IsNullOrEmpty(modelFile) || modelFile == ModelFileName) return;
 
                 // All good so load models
@@ -648,7 +648,7 @@ namespace GS2.Server.Windows
                 }
 
                 //load compass, pier model and telescope model
-                Compass = MaterialHelper.CreateImageMaterial(GS.Shared.Model3D.GetCompassFile(SkyServer.SouthernHemisphere, SkySettings.AlignmentMode == AlignmentModes.algAltAz), 100);
+                Compass = MaterialHelper.CreateImageMaterial(GS2.Shared.Model3D.GetCompassFile(SkyServer.SouthernHemisphere, SkySettings.AlignmentMode == AlignmentModes.algAltAz), 100);
                 LoadPierModel();
 
                 var import = new ModelImporter();
@@ -724,7 +724,7 @@ namespace GS2.Server.Windows
         /// </summary>
         private void Rotate()
         {
-            var axes = GS.Shared.Model3D.RotateModel(SkySettings.Mount.ToString(), SkyServer.ActualAxisX,
+            var axes = GS2.Shared.Model3D.RotateModel(SkySettings.Mount.ToString(), SkyServer.ActualAxisX,
                SkyServer.ActualAxisY, SkyServer.SouthernHemisphere, SkySettings.AlignmentMode, (int)SkyServer.PolarMode3D);
 
             YAxis = axes[0];

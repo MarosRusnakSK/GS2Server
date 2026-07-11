@@ -14,13 +14,13 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 using ASCOM.DeviceInterface;
-using GS.Principles;
+using GS2.Principles;
 using GS2.Server.SkyTelescope;
-using GS.Shared;
-using GS.SkyWatcher;
+using GS2.SkyWatcher;
 using System;
 using System.Reflection;
 using System.Threading;
+using GS2.Shared;
 
 namespace GS2.Server.AutoHome
 {

@@ -15,11 +15,11 @@
  */
 using System;
 using SharpDX.DirectInput;
-using GS.Shared;
 using System.Reflection;
 using System.Threading;
 using System.Linq;
-using GS.Principles;
+using GS2.Principles;
+using GS2.Shared;
 
 namespace GS2.Server.GamePad
 {
