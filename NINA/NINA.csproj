@@ -60,7 +60,7 @@
 		<ProjectReference Include="..\GS2.Shared\GS2.Shared.csproj">
 			<Private>false</Private>
 		</ProjectReference>
-		<ProjectReference Include="..\GS.Utilities\GS2.Utilities.csproj">
+		<ProjectReference Include="..\GS2.Utilities\GS2.Utilities.csproj">
 			<Private>false</Private>
 		</ProjectReference>
 		<ProjectReference Include="..\GS2.Utilities\GS2.Utilities.csproj" />
